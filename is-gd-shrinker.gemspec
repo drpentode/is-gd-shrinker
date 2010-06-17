@@ -17,12 +17,12 @@ Gem::Specification.new do |s|
      "README.rdoc"
   ]
   s.files = [
-    ".document",
-     ".gitignore",
-     "LICENSE",
+    "LICENSE",
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "is-gd-shrinker.gemspec",
+     "lib/shrinker.rb",
      "spec/is-gd-shrinker_spec.rb",
      "spec/spec.opts",
      "spec/spec_helper.rb"

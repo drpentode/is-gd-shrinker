@@ -4,8 +4,10 @@ A small gem to shorten URLs using is.gd.
 
 == Usage
 require "shrinker"
-Shrinker.shrink("http://www.google.com")
-Shrinker.expand("http://is.gd/xxx") where xxx is your shrunken URL
+
+<tt>Shrinker.shrink("http://www.google.com")</tt>
+
+<tt>Shrinker.expand("http://is.gd/xxx")</tt> where xxx is your shrunken URL
 
 == Copyright
 

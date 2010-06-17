@@ -2,6 +2,11 @@
 
 A small gem to shorten URLs using is.gd.
 
+== Usage
+require "shrinker"
+Shrinker.shrink("http://www.google.com")
+Shrinker.expand("http://is.gd/xxx") where xxx is your shrunken URL
+
 == Copyright
 
 Copyright (c) 2010 Jeff Sutherland. See LICENSE for details.

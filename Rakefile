@@ -5,8 +5,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "is-gd-shrinker"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{A simple is.gd URL shrinker and expander for Ruby}
+    gem.description = %Q{Use is.gd to shrink and expand URLs for your Ruby application.  A one-liner does it all.}
     gem.email = "jefferey.sutherland@gmail.com"
     gem.homepage = "http://github.com/drpentode/is-gd-shrinker"
     gem.authors = ["Jeff Sutherland"]

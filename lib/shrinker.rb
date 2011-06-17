@@ -1,6 +1,8 @@
 class Shrinker
   require "open-uri"
   require "net/http"
+  require "erb"
+  include ERB::Util
   
   IS_GD_URL = "http://is.gd/api.php?longurl="
 
@@ -9,7 +11,7 @@ class Shrinker
       raise ShrinkError.new("Supplied URL was not formatted as a URL.  Please format it as http://www.domain.com/")
     end
 
-    encoded_url = URI.encode(IS_GD_URL + url)
+    encoded_url = IS_GD_URL + url_encode(url)
 
     begin
       shrunken_url = OpenURI.open_uri(encoded_url, 'r') { |file| file.read }

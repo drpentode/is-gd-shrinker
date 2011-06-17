@@ -1,10 +1,15 @@
 class Shrinker
   require "open-uri"
   require "net/http"
-  require "erb"
-  include ERB::Util
   
   IS_GD_URL = "http://is.gd/api.php?longurl="
+
+  # From erb.rb
+  def self.url_encode(s)
+    s.to_s.dup.force_encoding("ASCII-8BIT").gsub(/[^a-zA-Z0-9_\-.]/n) {
+      sprintf("%%%02X", $&.unpack("C")[0])
+    }
+  end
 
   def self.shrink(url)
     unless url.match(/^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$/ix)

@@ -4,12 +4,17 @@ class Shrinker
   
   IS_GD_URL = "http://is.gd/api.php?longurl="
 
+  # From erb.rb
+  def self.url_encode(s)
+    s.to_s.gsub(/[^a-zA-Z0-9_\-.]/n){ sprintf("%%%02X", $&.unpack("C")[0]) }
+  end
+
   def self.shrink(url)
     unless url.match(/^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$/ix)
       raise ShrinkError.new("Supplied URL was not formatted as a URL.  Please format it as http://www.domain.com/")
     end
 
-    encoded_url = URI.encode(IS_GD_URL + url)
+    encoded_url = IS_GD_URL + url_encode(url)
 
     begin
       shrunken_url = OpenURI.open_uri(encoded_url, 'r') { |file| file.read }
